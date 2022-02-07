@@ -33,8 +33,20 @@ function searchWeather(event) {
 //GEOLOCATION
 
 function showCurrentTemp(response) {
-  console.log(response.data.name);
-  console.log(Math.round(response.data.main.temp));
+  document.querySelector("#city-name").innerHTML = response.data.name;
+  document.querySelector("#mainTemp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#feelsLike").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
+  document.querySelector("#humidity").innerHTML = Math.round(
+    response.data.main.humidity
+  );
+  document.querySelector("#weather").innerHTML = response.data.weather[0].main;
 }
 
 function locateCurrentTemp(position) {

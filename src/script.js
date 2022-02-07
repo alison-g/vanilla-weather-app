@@ -30,6 +30,25 @@ function searchWeather(event) {
   search(city);
 }
 
+//GEOLOCATION
+
+function showCurrentTemp(response) {
+  console.log(response.data.name);
+  console.log(Math.round(response.data.main.temp));
+}
+
+function locateCurrentTemp(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "302b354b2bd58d43a3079df7d4047669";
+  let apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=
+${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+
+  axios.get(apiCall).then(showCurrentTemp);
+}
+
+navigator.geolocation.getCurrentPosition(locateCurrentTemp);
+
 // C to F
 
 function changeTempToF(event) {

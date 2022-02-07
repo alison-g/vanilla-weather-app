@@ -1,4 +1,4 @@
-//GEOLOCATION & API
+//API
 
 function giveWeather(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
@@ -110,6 +110,9 @@ switchFeelsLikeToC.addEventListener("click", changeFeelsLikeTempToC);
 
 let switchToC = document.querySelector("#tempC");
 switchToC.addEventListener("click", changeTempToC);
+
+let searchButton = document.querySelector("#search-town-form");
+searchButton.addEventListener("submit", searchWeather);
 
 changeTime();
 

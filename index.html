@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <title>Vanilla Weather App</title>
+
   <body>
     <h1 class="main-heading" id = "city-name">Edinburgh
         </h1>
@@ -44,6 +45,34 @@
         </h2>
         </br>
     
+        <form id="search-town-form">
+                <div class="row">
+                <div class = "col-4 search-town">
+            <input 
+            type="text" 
+            placeholder="Enter town" 
+            class="form-control shadow-sm"
+            id = "enter-town"
+            autofocus/>
+            </div>
+
+            
+            <div id = "submit" class = "col-3">
+            <input 
+            type="submit"
+            value="Search"
+            class="form-control shadow btn-secondary"
+          
+            >
+            </div>
+
+            <div  class = "col-3"  id = "current">
+              <button class="form-control shadow btn-secondary">Current</button>
+            </div>
+            </div>
+          
+                
+            </form>
     
 
   </body>

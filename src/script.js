@@ -40,6 +40,34 @@ function changeFeelsLikeTempToC(event) {
   removeF.innerHTML = "℃";
 }
 
+//TIME & DATE
+
+function changeTime() {
+  if (minutes < 10) {
+    let time = document.querySelector("#time-and-date");
+    time.innerHTML = `${day} ${hours}:0${minutes}`;
+  } else {
+    let time = document.querySelector("#time-and-date");
+    time.innerHTML = `${day} ${hours}:${minutes}`;
+  }
+}
+
+let now = new Date();
+let hours = now.getHours();
+let minutes = now.getMinutes();
+
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+let day = days[now.getDay()];
+
 let switchToF = document.querySelector("#temp");
 switchToF.addEventListener("click", changeTempToF);
 
@@ -51,3 +79,5 @@ switchFeelsLikeToC.addEventListener("click", changeFeelsLikeTempToC);
 
 let switchToC = document.querySelector("#tempC");
 switchToC.addEventListener("click", changeTempToC);
+
+console.log(changeTime());

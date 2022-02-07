@@ -13,8 +13,34 @@
     />
     <link rel="stylesheet" href="src/styles.css" />
   </head>
+  <title>Vanilla Weather App</title>
   <body>
-    <h1 class="text-muted">Hello</h1>
+    <h1 class="main-heading" id = "city-name">Edinburgh
+        </h1>
+ 
+        <h2 class= "main-heading">
+        <i class= "far fa-snowflake" id = "main-icon" ></i>
+        </h2>
+
+    <h2 class = "heading">
+          <span  id="mainTemp"></span>
+          <span  id="mainC">℃</span>
+
+    <br>
+          
+        <p id="weather"></p>
+
+        <hr id = "line">
+        
+        <p class = "weatherInfo">Feels Like: <span id="feelsLike"></span><span id="feelsLikeC">℃</span></p>
+        <p class = "weatherInfo">Wind: <span id="wind"></span> mph</p>
+        
+        <p class = "weatherInfo" >Humidity: <span id="humidity"></span>%</p>
+        </h2>
+        </br>
+    
+    
+
   </body>
   <script src="src/script.js"></script>
 </html>

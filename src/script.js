@@ -1,3 +1,25 @@
+//GEOLOCATION & API
+
+function giveWeather(response) {
+  document.querySelector("#city-name").innerHTML = response.data.name;
+  document.querySelector("#mainTemp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+}
+
+function search(city) {
+  let apiKey = "302b354b2bd58d43a3079df7d4047669";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+  axios.get(apiUrl).then(giveWeather);
+}
+
+function searchWeather(event) {
+  event.preventDefault();
+  let city = document.querySelector("#enter-town").value;
+  search(city);
+}
+
 // C to F
 
 function changeTempToF(event) {
@@ -81,4 +103,4 @@ switchToC.addEventListener("click", changeTempToC);
 
 changeTime();
 
-console.log(axios);
+search("London");

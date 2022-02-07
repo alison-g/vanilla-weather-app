@@ -98,3 +98,10 @@ footer {
   margin: 10px;
   font-size: 60px;
 }
+
+#mainC {
+  text-align: left;
+  font-size: 15px;
+  position: relative;
+  bottom: 9px;
+}

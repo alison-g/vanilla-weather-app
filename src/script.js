@@ -47,7 +47,9 @@ ${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   axios.get(apiCall).then(showCurrentTemp);
 }
 
-navigator.geolocation.getCurrentPosition(locateCurrentTemp);
+function searchCurrentLocation() {
+  navigator.geolocation.getCurrentPosition(locateCurrentTemp);
+}
 
 // C to F
 
@@ -132,6 +134,9 @@ switchToC.addEventListener("click", changeTempToC);
 
 let searchButton = document.querySelector("#search-town-form");
 searchButton.addEventListener("submit", searchWeather);
+
+let searchCurrent = document.querySelector("#current");
+searchCurrent.addEventListener("click", searchCurrentLocation);
 
 changeTime();
 

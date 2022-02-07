@@ -14,8 +14,19 @@ h2 {
   position: relative;
 }
 
+.container {
+  font-family: "Quicksand", sans-serif;
+  width: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #eae8fc;
+  border-radius: 5px;
+  border-color: grey;
+  padding: 20px;
+}
+
 #line {
   max-width: 60px;
-  left: 390px;
+  left: 200px;
   position: relative;
 }

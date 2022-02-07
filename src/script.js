@@ -52,10 +52,6 @@ function changeTime() {
   }
 }
 
-let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-
 let days = [
   "Sunday",
   "Monday",
@@ -66,6 +62,9 @@ let days = [
   "Saturday",
 ];
 
+let now = new Date();
+let hours = now.getHours();
+let minutes = now.getMinutes();
 let day = days[now.getDay()];
 
 let switchToF = document.querySelector("#temp");
@@ -80,4 +79,6 @@ switchFeelsLikeToC.addEventListener("click", changeFeelsLikeTempToC);
 let switchToC = document.querySelector("#tempC");
 switchToC.addEventListener("click", changeTempToC);
 
-console.log(changeTime());
+changeTime();
+
+console.log(axios);

@@ -60,6 +60,19 @@ h2 {
   bottom: 0.5px;
 }
 
+.farenheit:hover {
+  color: black;
+}
+
+.temperatureCentigrade:hover {
+  color: black;
+}
+
+.centigrade {
+  position: relative;
+  top: -8px;
+}
+
 #line {
   max-width: 60px;
   left: 200px;

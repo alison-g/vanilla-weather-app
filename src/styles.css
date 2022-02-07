@@ -1,3 +1,21 @@
 h1 {
-  color: blue;
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  font-size: 35px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.weatherInfo {
+  font-size: 15px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#line {
+  max-width: 60px;
+  left: 390px;
+  position: relative;
 }

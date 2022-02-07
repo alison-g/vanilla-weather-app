@@ -78,3 +78,10 @@ h2 {
   left: 200px;
   position: relative;
 }
+
+#main-icon {
+  color: #6b62ff;
+  left: 30px;
+  margin: 10px;
+  font-size: 60px;
+}

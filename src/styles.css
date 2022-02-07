@@ -25,6 +25,24 @@ h2 {
   padding: 20px;
 }
 
+.btn-secondary {
+  margin-right: 10px;
+  background-color: #6b62ff;
+  opacity: 0.2px;
+  border: none;
+  margin-top: 1px;
+}
+
+.btn-secondary:hover {
+  transition: ease-in-out 200ms;
+  background-color: #81817f;
+  border: none;
+}
+
+.search-town {
+  margin-left: 45px;
+}
+
 #line {
   max-width: 60px;
   left: 200px;

@@ -43,6 +43,23 @@ h2 {
   margin-left: 45px;
 }
 
+.farenheit {
+  text-decoration: none;
+  font-size: 20px;
+  position: absolute;
+  font-style: none;
+}
+
+.temperatureCentigrade {
+  text-decoration: none;
+  font-weight: 200px;
+  font-style: none;
+  font-size: 20px;
+  position: relative;
+  left: 40px;
+  bottom: 0.5px;
+}
+
 #line {
   max-width: 60px;
   left: 200px;

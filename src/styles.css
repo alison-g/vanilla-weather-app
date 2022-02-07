@@ -8,6 +8,11 @@ h2 {
   text-align: center;
 }
 
+footer {
+  text-align: left;
+  margin: 25px 0px 0px;
+}
+
 .weatherInfo {
   font-size: 15px;
   margin: 0 auto;

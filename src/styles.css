@@ -24,7 +24,7 @@ footer {
   width: 500px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #eae8fc;
+  background-color: #d5def5;
   border-radius: 5px;
   border-color: grey;
   padding: 20px;
@@ -32,7 +32,7 @@ footer {
 
 .btn-secondary {
   margin-right: 10px;
-  background-color: #6b62ff;
+  background-color: #8594e4;
   opacity: 0.2px;
   border: none;
   margin-top: 1px;

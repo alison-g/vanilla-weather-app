@@ -1,4 +1,20 @@
 function changeTime() {
+  let now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[now.getDay()];
+
   if (minutes < 10) {
     let time = document.querySelector("#time-and-date");
     time.innerHTML = `${day} ${hours}:0${minutes}`;
@@ -7,22 +23,6 @@ function changeTime() {
     time.innerHTML = `${day} ${hours}:${minutes}`;
   }
 }
-
-let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-let day = days[now.getDay()];
 
 //GEOLOCATION
 
@@ -73,6 +73,8 @@ function giveWeather(response) {
     response.data.main.humidity
   );
   document.querySelector("#weather").innerHTML = response.data.weather[0].main;
+  let icon = document.querySelector("#main-icon");
+  icon.setAttribute("src", `http://openweathermap.org/img/wn/04d@2x.png`);
 }
 
 function search(city) {
@@ -149,5 +151,4 @@ let searchCurrent = document.querySelector("#current");
 searchCurrent.addEventListener("click", searchCurrentLocation);
 
 search("London");
-
 changeTime();

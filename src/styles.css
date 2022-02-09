@@ -103,5 +103,9 @@ footer {
   text-align: left;
   font-size: 15px;
   position: relative;
-  bottom: 9px;
+  bottom: 14px;
+}
+
+#mainTemp {
+  font-size: 35px;
 }

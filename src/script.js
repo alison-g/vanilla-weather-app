@@ -59,6 +59,8 @@ function searchCurrentLocation() {
 //API
 
 function giveWeather(response) {
+  centigradeTemp = response.data.main.temp;
+  feelsLikeTemp = response.data.main.feels_like;
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#mainTemp").innerHTML = Math.round(
     response.data.main.temp
@@ -99,9 +101,8 @@ function changeTempToF(event) {
   event.preventDefault();
   let tempOne = document.querySelector("#mainTemp");
   let removeC = document.querySelector("#mainC");
-  let temp = tempOne.innerHTML;
 
-  tempOne.innerHTML = Math.round((temp * 9) / 5) + 32;
+  tempOne.innerHTML = Math.round((centigradeTemp * 9) / 5) + 32;
   removeC.innerHTML = "℉";
 }
 
@@ -109,9 +110,8 @@ function changeFeelsLikeTempToF(event) {
   event.preventDefault();
   let feelsLike = document.querySelector("#feelsLike");
   let removeC = document.querySelector("#feelsLikeC");
-  let temp = feelsLike.innerHTML;
 
-  feelsLike.innerHTML = Math.round((temp * 9) / 5) + 32;
+  feelsLike.innerHTML = Math.round((feelsLikeTemp * 9) / 5) + 32;
   removeC.innerHTML = "℉";
 }
 
@@ -152,6 +152,9 @@ searchButton.addEventListener("submit", searchWeather);
 
 let searchCurrent = document.querySelector("#current");
 searchCurrent.addEventListener("click", searchCurrentLocation);
+
+let centigradeTemp = null;
+let feelsLikeTemp = null;
 
 search("London");
 changeTime();

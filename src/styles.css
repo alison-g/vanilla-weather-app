@@ -13,6 +13,14 @@ footer {
   margin: 25px 0px 0px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #81817f;
+}
+
 .weatherInfo {
   font-size: 15px;
   margin: 0 auto;
@@ -58,7 +66,7 @@ footer {
 .time {
   font-size: 20px;
   position: relative;
-  left: 155px;
+  left: 145px;
   bottom: 40px;
   font-weight: 100px;
 }
@@ -74,11 +82,11 @@ footer {
 }
 
 .farenheit:hover {
-  color: black;
+  color: #81817f;
 }
 
 .temperatureCentigrade:hover {
-  color: black;
+  color: #81817f;
 }
 
 .centigrade {

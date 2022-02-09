@@ -119,9 +119,8 @@ function changeTempToC(event) {
   event.preventDefault();
   let tempTwo = document.querySelector("#mainTemp");
   let removeF = document.querySelector("#mainC");
-  let temp = tempTwo.innerHTML;
 
-  tempTwo.innerHTML = Math.round(((temp -= 32) * 5) / 9);
+  tempTwo.innerHTML = Math.round(centigradeTemp);
   removeF.innerHTML = "℃";
 }
 
@@ -129,9 +128,8 @@ function changeFeelsLikeTempToC(event) {
   event.preventDefault();
   let feelsLike = document.querySelector("#feelsLike");
   let removeF = document.querySelector("#feelsLikeC");
-  let temp = feelsLike.innerHTML;
 
-  feelsLike.innerHTML = Math.round(((temp -= 32) * 5) / 9);
+  feelsLike.innerHTML = Math.round(feelsLikeTemp);
   removeF.innerHTML = "℃";
 }
 

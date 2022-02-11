@@ -61,24 +61,31 @@ function searchCurrentLocation() {
 //FORECAST
 
 function weatherPrediction(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Mon", "Tue", "Wed", "Thurs", "Fri"];
-  let max = Math.round(response.data.daily[0].temp.max);
-  let min = Math.round(response.data.daily[0].temp.min);
-  let forecastIcon = response.data.daily[0].weather[0].icon;
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (daily) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class="col">
-                ${daily}
-      <img src="http://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="weather-forecast" width="60px">
-          <span class="weather-prediction-temp-max"><strong>${max}° &nbsp</strong> </span>
-          <span class="weather-prediction-temp-min"> ${min}° </span>
+              <div class="forecast-day">  ${forecastDay.dt}
+      <img src="http://openweathermap.org/img/wn/${
+        response.data.daily[0].weather[0].icon
+      }@2x.png" alt="weather-forecast" width="60px">
+      </br>
+          <span class="weather-prediction-temp-max"><strong>${Math.round(
+            response.data.daily[0].temp.max
+          )}° &nbsp</strong> </span>
+          <span class="weather-prediction-temp-min"> ${Math.round(
+            response.data.daily[0].temp.min
+          )}° </span>
   </div>
-  `;
+  </div>
+      `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;

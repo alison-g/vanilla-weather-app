@@ -1,3 +1,29 @@
+//FORECAST
+
+function weatherPrediction() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (daily) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+                ${daily}
+      <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather-forecast" width="60px">
+          <span class="weather-prediction-temp-max"><strong>18°</strong> </span>
+          <span class="weather-prediction-temp-min"> 2° </span>
+  </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//TIME & DATE
+
 function changeTime() {
   let now = new Date();
   let hours = now.getHours();
@@ -156,3 +182,4 @@ let feelsLikeTemp = null;
 
 search("London");
 changeTime();
+weatherPrediction();

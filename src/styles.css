@@ -101,7 +101,7 @@ p {
   top: -8px;
 }
 
-.weather-predictions {
+#forecast {
   text-align: center;
   margin-top: 25px;
 }

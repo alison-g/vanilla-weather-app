@@ -68,12 +68,12 @@ p {
 }
 
 #time-and-date {
+  width: 480px;
   font-size: 20px;
   position: relative;
   left: 145px;
   bottom: 25px;
   margin: 0 auto;
-  width: 460px;
 }
 
 .temperatureCentigrade {

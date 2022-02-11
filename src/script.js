@@ -66,7 +66,7 @@ function weatherPrediction(response) {
   let days = ["Mon", "Tue", "Wed", "Thurs", "Fri"];
   let max = Math.round(response.data.daily[0].temp.max);
   let min = Math.round(response.data.daily[0].temp.min);
-
+  let forecastIcon = response.data.daily[0].weather[0].icon;
   let forecastHTML = `<div class="row">`;
   days.forEach(function (daily) {
     forecastHTML =
@@ -74,7 +74,7 @@ function weatherPrediction(response) {
       `
   <div class="col">
                 ${daily}
-      <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather-forecast" width="60px">
+      <img src="http://openweathermap.org/img/wn/${forecastIcon}@2x.png" alt="weather-forecast" width="60px">
           <span class="weather-prediction-temp-max"><strong>${max}° &nbsp</strong> </span>
           <span class="weather-prediction-temp-min"> ${min}° </span>
   </div>

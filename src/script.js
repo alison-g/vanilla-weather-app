@@ -63,7 +63,7 @@ function searchCurrentLocation() {
 function weatherPrediction(response) {
   console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+  let days = ["Mon", "Tue", "Wed", "Thurs", "Fri"];
   let max = Math.round(response.data.daily[0].temp.max);
   let min = Math.round(response.data.daily[0].temp.min);
 
@@ -72,10 +72,10 @@ function weatherPrediction(response) {
     forecastHTML =
       forecastHTML +
       `
-  <div class="col-2">
+  <div class="col">
                 ${daily}
       <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather-forecast" width="60px">
-          <span class="weather-prediction-temp-max"><strong>${max}°</strong> </span>
+          <span class="weather-prediction-temp-max"><strong>${max}° &nbsp</strong> </span>
           <span class="weather-prediction-temp-min"> ${min}° </span>
   </div>
   `;

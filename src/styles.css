@@ -21,6 +21,10 @@ a:hover {
   color: #81817f;
 }
 
+p {
+  margin: 0 auto;
+}
+
 .weatherInfo {
   font-size: 15px;
   margin: 0 auto;
@@ -63,12 +67,13 @@ a:hover {
   font-style: none;
 }
 
-.time {
+#time-and-date {
   font-size: 20px;
   position: relative;
   left: 145px;
-  bottom: 40px;
-  font-weight: 100px;
+  bottom: 25px;
+  margin: 0 auto;
+  width: 460px;
 }
 
 .temperatureCentigrade {
@@ -79,6 +84,8 @@ a:hover {
   position: relative;
   left: 40px;
   bottom: 0.5px;
+  margin: 0 auto;
+  padding: 0px;
 }
 
 .farenheit:hover {
@@ -94,17 +101,20 @@ a:hover {
   top: -8px;
 }
 
+.weather-predictions {
+  text-align: center;
+  margin-top: 25px;
+}
+
 #line {
   max-width: 60px;
   left: 200px;
   position: relative;
 }
 
-#main-icon {
+#main-icon.icon {
   color: #6b62ff;
   left: 30px;
-  margin: 10px;
-  font-size: 60px;
 }
 
 #mainC {
@@ -116,4 +126,8 @@ a:hover {
 
 #mainTemp {
   font-size: 35px;
+}
+
+.main-heading {
+  margin: 0 auto;
 }

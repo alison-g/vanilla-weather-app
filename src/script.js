@@ -1,27 +1,3 @@
-//FORECAST
-
-function weatherPrediction() {
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
-
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (daily) {
-    forecastHTML =
-      forecastHTML +
-      `
-  <div class="col-2">
-                ${daily}
-      <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather-forecast" width="60px">
-          <span class="weather-prediction-temp-max"><strong>18°</strong> </span>
-          <span class="weather-prediction-temp-min"> 2° </span>
-  </div>
-  `;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-
 //TIME & DATE
 
 function changeTime() {
@@ -82,7 +58,41 @@ function searchCurrentLocation() {
   navigator.geolocation.getCurrentPosition(locateCurrentTemp);
 }
 
+//FORECAST
+
+function weatherPrediction(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+  let max = Math.round(response.data.daily[0].temp.max);
+  let min = Math.round(response.data.daily[0].temp.min);
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (daily) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+                ${daily}
+      <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="weather-forecast" width="60px">
+          <span class="weather-prediction-temp-max"><strong>${max}°</strong> </span>
+          <span class="weather-prediction-temp-min"> ${min}° </span>
+  </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //API
+
+function getForecast(coordinates) {
+  apiKey = "302b354b2bd58d43a3079df7d4047669";
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(weatherPrediction);
+}
 
 function giveWeather(response) {
   centigradeTemp = response.data.main.temp;
@@ -106,6 +116,8 @@ function giveWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {

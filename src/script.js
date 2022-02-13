@@ -60,6 +60,14 @@ function searchCurrentLocation() {
 
 //FORECAST
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function weatherPrediction(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -71,7 +79,7 @@ function weatherPrediction(response) {
         forecastHTML +
         `
   <div class="col">
-              <div class="forecast-day">  ${forecastDay.dt}
+              <div class="forecast-day">  ${formatDay(forecastDay.dt)}
       <img src="http://openweathermap.org/img/wn/${
         response.data.daily[0].weather[0].icon
       }@2x.png" alt="weather-forecast" width="60px">

@@ -43,7 +43,6 @@ p {
 }
 
 .btn-secondary {
-  margin-right: 10px;
   background-color: #8594e4;
   opacity: 0.2px;
   border: none;
@@ -54,10 +53,6 @@ p {
   transition: ease-in-out 200ms;
   background-color: #81817f;
   border: none;
-}
-
-.search-town {
-  margin-left: 45px;
 }
 
 .farenheit {
@@ -72,6 +67,15 @@ p {
   font-size: 20px;
   position: relative;
   left: 145px;
+  bottom: 25px;
+  margin: 0 auto;
+}
+
+#updated {
+  width: 480px;
+  font-size: 15px;
+  position: relative;
+  left: 362px;
   bottom: 25px;
   margin: 0 auto;
 }
@@ -110,6 +114,10 @@ p {
   max-width: 60px;
   left: 200px;
   position: relative;
+}
+
+#search-town-form {
+  margin: 0px 50px 0px;
 }
 
 #main-icon.icon {

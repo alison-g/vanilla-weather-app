@@ -26,38 +26,6 @@ function changeTime() {
   }
 }
 
-//GEOLOCATION
-
-function showCurrentTemp(response) {
-  document.querySelector("#city-name").innerHTML = response.data.name;
-  document.querySelector("#mainTemp").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#feelsLike").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.main.humidity
-  );
-  document.querySelector("#weather").innerHTML = response.data.weather[0].main;
-}
-
-function locateCurrentTemp(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let apiKey = "302b354b2bd58d43a3079df7d4047669";
-  let apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-
-  axios.get(apiCall).then(showCurrentTemp);
-}
-
-function searchCurrentLocation() {
-  navigator.geolocation.getCurrentPosition(locateCurrentTemp);
-}
-
 //FORECAST
 
 function formatDay(timestamp) {
@@ -185,9 +153,6 @@ switchToC.addEventListener("click", changeTempToC);
 
 let searchButton = document.querySelector("#search-town-form");
 searchButton.addEventListener("submit", searchWeather);
-
-let searchCurrent = document.querySelector("#current");
-searchCurrent.addEventListener("click", searchCurrentLocation);
 
 let centigradeTemp = null;
 let feelsLikeTemp = null;

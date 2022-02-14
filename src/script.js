@@ -80,15 +80,16 @@ function weatherPrediction(response) {
         `
   <div class="col">
               <div class="forecast-day">  ${formatDay(forecastDay.dt)}
-      <img src="http://openweathermap.org/img/wn/${
-        response.data.daily[0].weather[0].icon
+              </br>
+      <img id="icon-forecast" src="http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
       }@2x.png" alt="weather-forecast" width="60px">
       </br>
-          <span class="weather-prediction-temp-max"><strong>${Math.round(
-            response.data.daily[0].temp.max
+          <span class="weather-prediction-temp-max" id="weather-prediction-temp-max"><strong>${Math.round(
+            forecastDay.temp.max
           )}° &nbsp</strong> </span>
           <span class="weather-prediction-temp-min"> ${Math.round(
-            response.data.daily[0].temp.min
+            forecastDay.temp.min
           )}° </span>
   </div>
   </div>
@@ -154,46 +155,30 @@ function changeTempToF(event) {
   event.preventDefault();
   let tempOne = document.querySelector("#mainTemp");
   let removeC = document.querySelector("#mainC");
+  let feelsLike = document.querySelector("#feelsLike");
+  let removeCelsius = document.querySelector("#feelsLikeC");
 
   tempOne.innerHTML = Math.round((centigradeTemp * 9) / 5) + 32;
   removeC.innerHTML = "℉";
-}
-
-function changeFeelsLikeTempToF(event) {
-  event.preventDefault();
-  let feelsLike = document.querySelector("#feelsLike");
-  let removeC = document.querySelector("#feelsLikeC");
-
   feelsLike.innerHTML = Math.round((feelsLikeTemp * 9) / 5) + 32;
-  removeC.innerHTML = "℉";
+  removeCelsius.innerHTML = "℉";
 }
 
 function changeTempToC(event) {
   event.preventDefault();
   let tempTwo = document.querySelector("#mainTemp");
   let removeF = document.querySelector("#mainC");
+  let feelsLike = document.querySelector("#feelsLike");
+  let removeFeelsLikeF = document.querySelector("#feelsLikeC");
 
   tempTwo.innerHTML = Math.round(centigradeTemp);
   removeF.innerHTML = "℃";
-}
-
-function changeFeelsLikeTempToC(event) {
-  event.preventDefault();
-  let feelsLike = document.querySelector("#feelsLike");
-  let removeF = document.querySelector("#feelsLikeC");
-
   feelsLike.innerHTML = Math.round(feelsLikeTemp);
-  removeF.innerHTML = "℃";
+  removeFeelsLikeF.innerHTML = "℃";
 }
 
 let switchToF = document.querySelector("#temp");
 switchToF.addEventListener("click", changeTempToF);
-
-let switchFeelsLikeToF = document.querySelector("#temp");
-switchFeelsLikeToF.addEventListener("click", changeFeelsLikeTempToF);
-
-let switchFeelsLikeToC = document.querySelector("#tempC");
-switchFeelsLikeToC.addEventListener("click", changeFeelsLikeTempToC);
 
 let switchToC = document.querySelector("#tempC");
 switchToC.addEventListener("click", changeTempToC);
@@ -209,4 +194,3 @@ let feelsLikeTemp = null;
 
 search("London");
 changeTime();
-weatherPrediction();
